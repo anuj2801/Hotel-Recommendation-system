@@ -1,12 +1,15 @@
 import axios from "axios";
+import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
-import "./login.css";
+import "./Register.css";
 
 const Login = () => {
   const [credentials, setCredentials] = useState({
+    username: "",
     email: "",
+    phone: "",
     password: "",
   });
 
@@ -23,7 +26,7 @@ const Login = () => {
     dispatch({ type: "LOGIN_START" });
     console.log(credentials);
     try {
-      const res = await axios.post("http://localhost:8800/api/auth/login", credentials);
+      const res = await axios.post("http://localhost:8800/api/auth/register", credentials);
       dispatch({ type: "LOGIN_SUCCESS", payload: res.data.details });
       navigate("/")
     } catch (err) {
@@ -37,8 +40,22 @@ const Login = () => {
       <div className="lContainer">
         <input
           type="text"
+          placeholder="Username"
+          id="username"
+          onChange={handleChange}
+          className="lInput"
+        />
+        <input
+          type="text"
           placeholder="Email"
           id="email"
+          onChange={handleChange}
+          className="lInput"
+        />
+        <input
+          type="text"
+          placeholder="Phone"
+          id="phone"
           onChange={handleChange}
           className="lInput"
         />
@@ -50,11 +67,11 @@ const Login = () => {
           className="lInput"
         />
         <button disabled={loading} onClick={handleClick} className="lButton">
-          Login
+          Register
         </button>
         {error && <span>{error.message}</span>}
         <div>
-          <Link to={'/register'}>Register</Link>
+          <Link to={'/login'}>Login</Link>
         </div>
       </div>
     </div>
