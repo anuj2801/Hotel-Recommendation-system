@@ -61,36 +61,19 @@ const Header = ({ type }) => {
           type === "list" ? "headerContainer listMode" : "headerContainer"
         }
       >
-        <div className="headerList">
+        {/* <div className="headerList">
           <div className="headerListItem active">
             <FontAwesomeIcon icon={faBed} />
-            <span>Stays</span>
+            <span>Hotels</span>
           </div>
-          <div className="headerListItem">
-            <FontAwesomeIcon icon={faPlane} />
-            <span>Flights</span>
-          </div>
-          <div className="headerListItem">
-            <FontAwesomeIcon icon={faCar} />
-            <span>Car rentals</span>
-          </div>
-          <div className="headerListItem">
-            <FontAwesomeIcon icon={faBed} />
-            <span>Attractions</span>
-          </div>
-          <div className="headerListItem">
-            <FontAwesomeIcon icon={faTaxi} />
-            <span>Airport taxis</span>
-          </div>
-        </div>
+        </div> */}
         {type !== "list" && (
           <>
             <h1 className="headerTitle">
               A lifetime of discounts? It's Genius.
             </h1>
             <p className="headerDesc">
-              Get rewarded for your travels – unlock instant savings of 10% or
-              more with a free Lamabooking account
+              Get rewarded on your first booking– unlock 10% off on your next booking with a free HotelEngine account
             </p>
             {!user && <button className="headerBtn">Sign in / Register</button>}
             <div className="headerSearch">
@@ -132,7 +115,7 @@ const Header = ({ type }) => {
                 {openOptions && (
                   <div className="options">
                     <div className="optionItem">
-                      <span className="optionText">Adult</span>
+                      <span className="optionText">People</span>
                       <div className="optionCounter">
                         <button
                           disabled={options.adult <= 1}
@@ -152,7 +135,7 @@ const Header = ({ type }) => {
                         </button>
                       </div>
                     </div>
-                    <div className="optionItem">
+                    {/* <div className="optionItem">
                       <span className="optionText">Children</span>
                       <div className="optionCounter">
                         <button
@@ -172,7 +155,7 @@ const Header = ({ type }) => {
                           +
                         </button>
                       </div>
-                    </div>
+                    </div> */}
                     <div className="optionItem">
                       <span className="optionText">Room</span>
                       <div className="optionCounter">
