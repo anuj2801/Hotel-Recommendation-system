@@ -64,8 +64,9 @@ const Header = ({ type }) => {
         {/* <div className="headerList">
           <div className="headerListItem active">
             <FontAwesomeIcon icon={faBed} />
-            <span>Stays</span>
+            <span>Hotels</span>
           </div>
+<<<<<<< HEAD
           <div className="headerListItem">
             <FontAwesomeIcon icon={faPlane} />
             <span>Flights</span>
@@ -82,6 +83,8 @@ const Header = ({ type }) => {
             <FontAwesomeIcon icon={faTaxi} />
             <span>Airport taxis</span>
           </div>
+=======
+>>>>>>> e8684de25153968a1821089f2bc6c043a9518b72
         </div> */}
         {type !== "list" && (
           <>
@@ -89,8 +92,7 @@ const Header = ({ type }) => {
               A lifetime of discounts? It's Genius.
             </h1>
             <p className="headerDesc">
-              Get rewarded for your travels – unlock instant savings of 10% or
-              more with a free Lamabooking account
+              Get rewarded on your first booking– unlock 10% off on your next booking with a free HotelEngine account
             </p>
             {!user && <Link to={'/login'}><button className="headerBtn">Sign in / Register</button></Link>}
             <div className="headerSearch">
@@ -132,7 +134,7 @@ const Header = ({ type }) => {
                 {openOptions && (
                   <div className="options">
                     <div className="optionItem">
-                      <span className="optionText">Adult</span>
+                      <span className="optionText">People</span>
                       <div className="optionCounter">
                         <button
                           disabled={options.adult <= 1}
@@ -152,7 +154,7 @@ const Header = ({ type }) => {
                         </button>
                       </div>
                     </div>
-                    <div className="optionItem">
+                    {/* <div className="optionItem">
                       <span className="optionText">Children</span>
                       <div className="optionCounter">
                         <button
@@ -172,7 +174,7 @@ const Header = ({ type }) => {
                           +
                         </button>
                       </div>
-                    </div>
+                    </div> */}
                     <div className="optionItem">
                       <span className="optionText">Room</span>
                       <div className="optionCounter">
