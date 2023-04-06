@@ -13,7 +13,7 @@ import { useContext, useState } from "react";
 import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import { format } from "date-fns";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { SearchContext } from "../../context/SearchContext";
 import { AuthContext } from "../../context/AuthContext";
 
@@ -61,7 +61,7 @@ const Header = ({ type }) => {
           type === "list" ? "headerContainer listMode" : "headerContainer"
         }
       >
-        <div className="headerList">
+        {/* <div className="headerList">
           <div className="headerListItem active">
             <FontAwesomeIcon icon={faBed} />
             <span>Stays</span>
@@ -82,7 +82,7 @@ const Header = ({ type }) => {
             <FontAwesomeIcon icon={faTaxi} />
             <span>Airport taxis</span>
           </div>
-        </div>
+        </div> */}
         {type !== "list" && (
           <>
             <h1 className="headerTitle">
@@ -92,7 +92,7 @@ const Header = ({ type }) => {
               Get rewarded for your travels – unlock instant savings of 10% or
               more with a free Lamabooking account
             </p>
-            {!user && <button className="headerBtn">Sign in / Register</button>}
+            {!user && <Link to={'/login'}><button className="headerBtn">Sign in / Register</button></Link>}
             <div className="headerSearch">
               <div className="headerSearchItem">
                 <FontAwesomeIcon icon={faBed} className="headerIcon" />
