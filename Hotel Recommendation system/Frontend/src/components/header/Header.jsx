@@ -66,25 +66,6 @@ const Header = ({ type }) => {
             <FontAwesomeIcon icon={faBed} />
             <span>Hotels</span>
           </div>
-<<<<<<< HEAD
-          <div className="headerListItem">
-            <FontAwesomeIcon icon={faPlane} />
-            <span>Flights</span>
-          </div>
-          <div className="headerListItem">
-            <FontAwesomeIcon icon={faCar} />
-            <span>Car rentals</span>
-          </div>
-          <div className="headerListItem">
-            <FontAwesomeIcon icon={faBed} />
-            <span>Attractions</span>
-          </div>
-          <div className="headerListItem">
-            <FontAwesomeIcon icon={faTaxi} />
-            <span>Airport taxis</span>
-          </div>
-=======
->>>>>>> e8684de25153968a1821089f2bc6c043a9518b72
         </div> */}
         {type !== "list" && (
           <>
@@ -105,7 +86,7 @@ const Header = ({ type }) => {
                   onChange={(e) => setDestination(e.target.value)}
                 />
               </div>
-              <div className="headerSearchItem">
+              {/* <div className="headerSearchItem">
                 <FontAwesomeIcon icon={faCalendarDays} className="headerIcon" />
                 <span
                   onClick={() => setOpenDate(!openDate)}
@@ -124,8 +105,8 @@ const Header = ({ type }) => {
                     minDate={new Date()}
                   />
                 )}
-              </div>
-              <div className="headerSearchItem">
+              </div> */}
+              {/* <div className="headerSearchItem">
                 <FontAwesomeIcon icon={faPerson} className="headerIcon" />
                 <span
                   onClick={() => setOpenOptions(!openOptions)}
@@ -154,7 +135,7 @@ const Header = ({ type }) => {
                         </button>
                       </div>
                     </div>
-                    {/* <div className="optionItem">
+                    <div className="optionItem">
                       <span className="optionText">Children</span>
                       <div className="optionCounter">
                         <button
@@ -174,7 +155,7 @@ const Header = ({ type }) => {
                           +
                         </button>
                       </div>
-                    </div> */}
+                    </div>
                     <div className="optionItem">
                       <span className="optionText">Room</span>
                       <div className="optionCounter">
@@ -198,7 +179,7 @@ const Header = ({ type }) => {
                     </div>
                   </div>
                 )}
-              </div>
+              </div> */}
               <div className="headerSearchItem">
                 <button className="headerBtn" onClick={handleSearch}>
                   Search
