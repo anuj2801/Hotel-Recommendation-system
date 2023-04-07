@@ -25,5 +25,5 @@
 .fText{
   color: black;
   font-size: large;
-  /* align-content: center; */
+  text-align: center;
 }
