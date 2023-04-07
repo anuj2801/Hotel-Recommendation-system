@@ -12,6 +12,7 @@ import Register from "./pages/register/Register";
 function App() {
   return (
     <BrowserRouter>
+    <div style={{'marginTop':'-22px'}}>
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/hotels" element={<List/>}/>
@@ -19,6 +20,7 @@ function App() {
         <Route path="/login" element={<Login/>}/>
         <Route path="/register" element={<Register/>}/>
       </Routes>
+      </div>
     </BrowserRouter>
   );
 }
