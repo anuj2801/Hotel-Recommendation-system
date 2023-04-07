@@ -53,8 +53,9 @@ const Login = () => {
           Login
         </button>
         {error && <span>{error.message}</span>}
-        <div>
+        <div className="loginbottom">
           <Link to={'/register'}>Register</Link>
+          <Link to={'/'}>Skip</Link>
         </div>
       </div>
     </div>

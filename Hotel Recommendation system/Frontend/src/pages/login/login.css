@@ -9,6 +9,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  border-radius: 12px;
 }
 
 .lInput{
@@ -29,4 +30,9 @@
 .lButton:disabled{
   background-color: #0071c28c;
   cursor: not-allowed;
+}
+
+.loginbottom{
+  display: flex;
+  justify-content: space-between;
 }

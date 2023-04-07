@@ -15,11 +15,11 @@ const router = express.Router();
 
 
 // get all hotels in a city
-router.get("/", getHotels);
+router.get("/:cityname", getHotels);
 
-router.get("/countByCity", countByCity);
-router.get("/countByType", countByType);
-router.get("/room/:id", getHotelRooms);
+// router.get("/countByCity", countByCity);
+// router.get("/countByType", countByType);
+// router.get("/room/:id", getHotelRooms);
 
 
 

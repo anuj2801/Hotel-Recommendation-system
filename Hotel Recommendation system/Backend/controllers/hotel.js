@@ -1,8 +1,8 @@
 import Hotel from "../models/Hotel.js";
 
-export const getHotels = async (req, res, next) => {
+export const getHotels = async (req, res) => {
   try {
-    const hotels = await Hotel.find();
+    const hotels = await Hotel.find({city:req.params.cityname});
     res.status(200).json(hotels);
   } catch (err) {
     next(err);

@@ -1,3 +1,4 @@
+import axios from "axios";
 import {
   faBed,
   faCalendarDays,
@@ -49,9 +50,17 @@ const Header = ({ type }) => {
 
   const { dispatch } = useContext(SearchContext);
 
-  const handleSearch = () => {
-    dispatch({ type: "NEW_SEARCH", payload: { destination, dates, options } });
-    navigate("/hotels", { state: { destination, dates, options } });
+  const handleSearch = async () => {
+    // dispatch({ type: "NEW_SEARCH", payload: { destination, dates, options } });
+    try {
+      console.log(destination);
+      navigate("/hotels", { state: { destination } });
+      // const res = await axios.get("http://localhost:8800/api/hotels/"+destination);
+      // console.log(res);
+    } catch (error) {
+      console.log(error);
+    }
+    
   };
 
   return (

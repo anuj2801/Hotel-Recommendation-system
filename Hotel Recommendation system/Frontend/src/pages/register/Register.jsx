@@ -70,8 +70,9 @@ const Login = () => {
           Register
         </button>
         {error && <span>{error.message}</span>}
-        <div>
+        <div className="loginbottom">
           <Link to={'/login'}>Login</Link>
+          <Link to={'/'}>Skip</Link>
         </div>
       </div>
     </div>
