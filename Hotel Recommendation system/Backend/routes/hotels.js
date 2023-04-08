@@ -16,6 +16,7 @@ const router = express.Router();
 
 // get all hotels in a city
 router.get("/:cityname", getHotels);
+router.post("/updateHotel",updateHotel);
 
 // router.get("/countByCity", countByCity);
 // router.get("/countByType", countByType);

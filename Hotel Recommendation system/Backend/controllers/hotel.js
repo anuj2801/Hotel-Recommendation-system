@@ -37,10 +37,11 @@ export const createHotel = async (req, res, next) => {
   }
 };
 
-export const updateHotel = async (req, res, next) => {
+export const updateHotel = async (req, res) => {
   try {
+    //const {uniq_id} = req.body;
     const updatedHotel = await Hotel.findByIdAndUpdate(
-      req.params.id,
+      req.body._id,
       { $set: req.body },
       { new: true }
     );
