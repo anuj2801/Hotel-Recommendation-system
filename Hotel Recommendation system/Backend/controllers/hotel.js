@@ -20,6 +20,19 @@ export const getHotelsByRating = async (req, res) => {
   }
 };
 
+export const order = async (req, res) => {
+  try {
+    //const {uniq_id} = req.body;
+    const {_id,rooms}=req.body;
+    const orderedHotel = await Hotel.findById(_id);
+    orderedHotel.rooms=orderedHotel.rooms-rooms ;
+    res.status(200).json(orderedHotel);
+  } catch (err) {
+    next(err);
+  }
+};
+
+
 
 // export const getHotels = async (req, res, next) => {
 //   const { min, max, ...others } = req.query;
