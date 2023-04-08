@@ -68,7 +68,8 @@
 
 .siRating{
   display: flex;
-  justify-content: space-between
+  justify-content: flex-end;
+  /* justify-content: space-between */
 }
 
 .siRating>span{
