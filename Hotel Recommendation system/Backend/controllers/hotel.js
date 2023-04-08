@@ -9,6 +9,18 @@ export const getHotels = async (req, res) => {
   }
 };
 
+
+export const getHotelsByRating = async (req, res) => {
+  try {
+    const hotels = await Hotel.find({hotel_star_rating:req.params.rating});
+    console.log(hotels)
+    res.status(200).json(hotels);
+  } catch (err) {
+    next(err);
+  }
+};
+
+
 // export const getHotels = async (req, res, next) => {
 //   const { min, max, ...others } = req.query;
 //   try {
@@ -37,10 +49,11 @@ export const createHotel = async (req, res, next) => {
   }
 };
 
-export const updateHotel = async (req, res, next) => {
+export const updateHotel = async (req, res) => {
   try {
+    //const {uniq_id} = req.body;
     const updatedHotel = await Hotel.findByIdAndUpdate(
-      req.params.id,
+      req.body._id,
       { $set: req.body },
       { new: true }
     );
