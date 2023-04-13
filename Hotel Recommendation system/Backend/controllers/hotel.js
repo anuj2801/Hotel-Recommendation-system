@@ -2,9 +2,12 @@ import Hotel from "../models/Hotel.js";
 
 export const getHotels = async (req, res) => {
   try {
+    console.log('enter for search by cityName',req.params.cityname);
     const hotels = await Hotel.find({city:req.params.cityname});
-    res.status(200).json(hotels);
+    console.log('all city',[]);
+    res.status(200).json([]);
   } catch (err) {
+    console.log(err);
     next(err);
   }
 };
@@ -19,6 +22,11 @@ export const getHotelsByRating = async (req, res) => {
     next(err);
   }
 };
+
+
+
+
+
 
 
 // export const getHotels = async (req, res, next) => {
