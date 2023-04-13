@@ -46,6 +46,11 @@ const HotelSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
+  booked_rooms: {
+    type: Number,
+    required: true,
+    default:0
+  },
 });
 
 export default mongoose.model("Hotel", HotelSchema)

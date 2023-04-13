@@ -8,17 +8,24 @@ import {
   getHotelRooms,
   getHotels,
   updateHotel,
-  getHotelsByRating
+  getHotelsByRating,
+  order,
+  addHotel,
+  getHotelsById
 } from "../controllers/hotel.js";
 import Hotel from "../models/Hotel.js";
-import {verifyAdmin} from "../utils/verifyToken.js"
+import Order from "../models/Order.js";
+import { verifyAdmin } from "../utils/verifyToken.js"
 const router = express.Router();
 
 
 // get all hotels in a city
 router.get("/:cityname", getHotels);
-router.post("/updateHotel",updateHotel);
+router.post("/updateHotel", updateHotel);
 router.get("/getHotelsByRating/:rating", getHotelsByRating);
+router.post("/order", order);
+router.post("/addHotel", addHotel);
+router.get("/getHotelsById/:id", getHotelsById);
 
 // router.get("/countByCity", countByCity);
 // router.get("/countByType", countByType);
