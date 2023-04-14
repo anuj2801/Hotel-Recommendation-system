@@ -58,14 +58,17 @@
 
 .lsOptionItem{
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  /* justify-content: space-between; */
   margin-bottom: 10px;
   color: #555;
   font-size: 12px;
+  /* border: 1px solid red; */
 }
 
 .lsOptionInput{
-  width: 50px;
+  width: 90%;
+  padding: 8px;
 }
 
 .listSearch>button{

@@ -1,7 +1,10 @@
+import { useState } from "react";
 import useFetch from "../../hooks/useFetch";
 import "./featured.css";
+import { useNavigate } from "react-router-dom";
 
 const Featured = () => {
+  const navigate = useNavigate();
   const { data, loading, error } = useFetch(
     "/hotels/countByCity?cities=berlin,madrid,london"
   );
@@ -44,7 +47,7 @@ const Featured = () => {
             <div className="featuredTitles">
               <h1>Kolkata</h1>
               <h2>272 Hotels</h2>
-            </div>  
+            </div>
           </div>
           <div className="featuredItem">
             <img
@@ -55,10 +58,10 @@ const Featured = () => {
             <div className="featuredTitles">
               <h1>Hyderabad</h1>
               <h2>474 Hotels</h2>
-            </div>  
+            </div>
           </div>
-          
-          
+
+
         </>
       )}
     </div>

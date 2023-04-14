@@ -22,7 +22,7 @@ const router = express.Router();
 // get all hotels in a city
 router.get("/:cityname", getHotels);
 router.post("/updateHotel",updateHotel);
-router.get("/getHotelsByRating/:rating", getHotelsByRating);
+router.get("/getHotelsByRating/:cityname/:rating", getHotelsByRating);
 router.post("/order",order);
 router.post("/addHotel",addHotel);
 router.get("/getHotelsById/:id",getHotelsById);

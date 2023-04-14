@@ -48,7 +48,7 @@ const Footer = () => {
       <div className="fText">Copyright © 2022 Hotelbooking.</div>
 =======
       </div> */}
-      <div className="fText">Copyright © 2023 HotelEngine</div>
+      {/* <div className="fText">Copyright © 2023 HotelEngine</div> */}
     </div>
   );
 };

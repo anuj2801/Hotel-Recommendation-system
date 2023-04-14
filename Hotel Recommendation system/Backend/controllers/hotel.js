@@ -1,9 +1,18 @@
 import Hotel from "../models/Hotel.js";
 import Order from "../models/Order.js";
 
+function titleCase(str) {
+  var splitStr = str.toLowerCase().split(' ');
+  for (var i = 0; i < splitStr.length; i++) {
+      splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);     
+  }
+  return splitStr.join(' '); 
+}
+
 export const getHotels = async (req, res) => {
   try {
-    const hotels = await Hotel.find({city:req.params.cityname});
+    let city = titleCase(req.params.cityname);
+    const hotels = await Hotel.find({city:city});
     res.status(200).json(hotels);
   } catch (err) {
     next(err);
@@ -13,7 +22,23 @@ export const getHotels = async (req, res) => {
 
 export const getHotelsByRating = async (req, res) => {
   try {
-    const hotels = await Hotel.find({hotel_star_rating:req.params.rating});
+    const city = titleCase(req.params.cityname);
+    const rating = req.params.rating;
+    console.log(city,rating);
+    const hotels = await Hotel.find({city,hotel_star_rating:rating});
+    console.log(hotels)
+    res.status(200).json(hotels);
+  } catch (err) {
+    next(err);
+  }
+};
+
+export const getHotelsByPrice = async (req, res) => {
+  try {
+    const city = titleCase(req.params.cityname);
+    const rating = req.params.rating;
+    console.log(city,rating);
+    const hotels = await Hotel.find({city,hotel_star_rating:rating});
     console.log(hotels)
     res.status(200).json(hotels);
   } catch (err) {
@@ -25,8 +50,7 @@ export const getHotelsByRating = async (req, res) => {
 export const getHotelsById = async (req, res) => {
   try {
     const _id = req.params.id;
-    const hotels = await Hotel.findById(_id);
-    console.log(hotels)
+    const hotels = await Hotel.find({'uniq_id':_id});
     res.status(200).json(hotels);
   } catch (err) {
     next(err);
@@ -65,10 +89,9 @@ export const addHotel = async (req, res) => {
 
 export const order = async (req, res) => {
   try {
-    //const {uniq_id} = req.body;
     const {_id,rooms}=req.body;
     const orderedHotel = await Hotel.findById(_id);
-    orderedHotel.rooms=orderedHotel.rooms-rooms ;
+    orderedHotel.rooms = orderedHotel.rooms-rooms;
     res.status(200).json(orderedHotel);
   } catch (err) {
     next(err);
