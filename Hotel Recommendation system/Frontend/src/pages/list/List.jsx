@@ -31,10 +31,13 @@ const List = () => {
       }
       let res;
       if (rating == 0) {
+        console.log("enter1");
         res = await axios.get("http://localhost:8800/api/hotels/" + destination);
       } else {
+        console.log("enter2")
         res = await axios.get("http://localhost:8800/api/hotels/getHotelsByRating/" + destination + "/" + rating);
       }
+      console.log(res.data);
       setcityes(res.data);
     } catch (error) {
       console.log(error);

@@ -12,7 +12,9 @@ function titleCase(str) {
 export const getHotels = async (req, res) => {
   try {
     let city = titleCase(req.params.cityname);
+    console.log(city);
     const hotels = await Hotel.find({city:city});
+    console.log(hotels);
     res.status(200).json(hotels);
   } catch (err) {
     next(err);
